@@ -8,13 +8,12 @@ public class Queue<T> {
     public void enqueue(T item) {
         queue.add(item);
     } 
-   
-
+  
     public T dequeue() {
         if(queue.isEmpty()) {
             return null;
         }
-        return queue.remove(0);
+        return queue.remove(0); //첫번째 인덱스 -> FIFO 삭제
     }
 
     public boolean isEmpty() {

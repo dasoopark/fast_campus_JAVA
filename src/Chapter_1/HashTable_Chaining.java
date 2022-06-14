@@ -36,19 +36,20 @@ public class HashTable_Chaining {
 		Integer address = this.hashFunc(key);
 
 		if (this.hashTable[address] != null) {
-			Slot findSlot = this.hashTable[address];
+			Slot findSlot = this.hashTable[address];  //맨앞에 있는 슬롯 가지게 됨
 			Slot prevSlot = this.hashTable[address];
 
 			while (findSlot != null) {
 				if (findSlot.key == key) {
 					findSlot.value = value;
 					return true;
-				} else {
-					prevSlot = findSlot;
+				} else { //순회
+					prevSlot = findSlot; //정보 저장 
 					findSlot = findSlot.next;
 				}
 			}
 			prevSlot.next = new Slot(key, value);
+			
 		} else {
 			this.hashTable[address] = new Slot(key, value);
 		}
@@ -64,7 +65,7 @@ public class HashTable_Chaining {
 				if(findSlot.key == key) {
 					return findSlot.value;
 				}else {
-					findSlot = findSlot.next;
+					findSlot = findSlot.next; //헤드에서 순회 
 				}
 			}
 			return null;

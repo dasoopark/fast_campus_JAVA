@@ -2,7 +2,7 @@ package Chapter_1;
 
 public class HashTable {
     public Slot[] hashTable;
-
+   
     public HashTable(Integer size) {
         this.hashTable = new Slot[size]; //사이즈 할당
     }
@@ -14,18 +14,21 @@ public class HashTable {
             this.key = key;
             this.value = value;
         }
-    }
-
+    } 
+    
+    
     public int hashFunc(String key) {
         return (int)(key.charAt(0)) % this.hashTable.length;  //key의 첫번째 문자값을 아스키 숫자로 변환
         //모든 주소 공간에 대한 공간 확보 해쉬테이블
     }
+       
     
     public boolean saveData(String key, String value) {
-        Integer address = this.hashFunc(key); 
-        if (this.hashTable[address] != null) {
+        Integer address = this.hashFunc(key);  //해당키에 대한 주소 가져옴
+        
+        if (this.hashTable[address] != null) { //해당 주소에 대한 슬롯이 없을 때
             if (this.hashTable[address].key == key) {
-                this.hashTable[address].value = value;
+                this.hashTable[address].value = value; //값 대입 해주면 됨
                 return true;
             } else {
                 Integer currAddress = address + 1;
@@ -48,7 +51,7 @@ public class HashTable {
         }
         return true;
     }
-
+   
     public String getData(String key) {
         Integer address = this.hashFunc(key);
         if (this.hashTable[address] != null) {

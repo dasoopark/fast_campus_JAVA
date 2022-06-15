@@ -56,6 +56,7 @@ public class HashTable_LinearProbing {
 	        return true;
 	    }
 	    
+	 
 	    public String getData(String key) {
 	        Integer address = this.hashFunc(key);
 	        if (this.hashTable[address] != null) {

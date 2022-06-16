@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class BubbleSort {
     public ArrayList<Integer> sort(ArrayList<Integer> dataList) {
-        for (int index = 0; index < dataList.size() - 1; index++) {
+        for (int index = 0; index < dataList.size() - 1; index++) {  
             boolean swap = false;
 
             for (int index2 = 0; index2 < dataList.size() - index - 1; index2++) {
@@ -19,9 +19,10 @@ public class BubbleSort {
                 break;
             }
         }
+
         return dataList;
     }
-
+    
     public static void main(String[] args) {
         ArrayList<Integer> testData = new ArrayList<Integer>();
 

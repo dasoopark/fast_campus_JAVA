@@ -14,15 +14,19 @@ public class InsertionSort {
                 }
             }
         }
+        
         return dataList;
     }
     
+  
+   
     public static void main(String[] args) {
         ArrayList<Integer> testData = new ArrayList<Integer>();
 
         for (int index = 0; index < 100; index++) {
             testData.add((int)(Math.random() * 100));
         }
+       
         InsertionSort iSort = new InsertionSort();
         System.out.println(iSort.sort(testData));
     }

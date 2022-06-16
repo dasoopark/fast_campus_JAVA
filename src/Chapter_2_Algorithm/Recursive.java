@@ -8,6 +8,8 @@ package Chapter_2_Algorithm;
  */
 public class Recursive {
 	
+	
+	//팩토리얼 함수
 	public int factorialFunc(int n) {
 		if(n>1) {
 			return  n*this.factorialFunc(n-1);
@@ -15,6 +17,8 @@ public class Recursive {
 			return 1;
 		}
 	} 
+	
+	
 	
 	  /*
      * 연습해보기3
@@ -41,12 +45,20 @@ public class Recursive {
 		return this.factorialFunc2(data-1)+this.factorialFunc2(data-2)+this.factorialFunc(data-3);
 	}
 
+	
+	//피보나치 수열
+	public int FactorialFibo(int data){
+		if(data<=1) {
+			return data;
+		}
+		return this.FactorialFibo(data-1)+this.FactorialFibo(data-2);
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Recursive factorial = new Recursive();
 		System.out.println(factorial.factorialFunc(5));
 		System.out.println(factorial.factorialFunc2(6));
-		
+		System.out.println(factorial.FactorialFibo(10));
 
 	}
 

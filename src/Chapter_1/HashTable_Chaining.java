@@ -3,11 +3,11 @@ package Chapter_1;
 import Chapter_1.HashTable.Slot;
 
 /*
- ÇØ½ÃÅ×ÀÌºíÀ» Ã¼ÀÌ´× ±â¹ýÀ» »ç¿ëÇØ º¸±â
+ ï¿½Ø½ï¿½ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ Ã¼ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  
- Ã¼ÀÌ´× ±â¹ýÀÌ¶õ :
- °³¹æ ÇØ½³ ¶Ç´Â Open Hashing ±â¹ý Áß ÇÏ³ª: ÇØ½¬ Å×ÀÌºí ÀúÀå°ø°£ ¿ÜÀÇ °ø°£À» È°¿ëÇÏ´Â ±â¹ý
-Ãæµ¹ÀÌ ÀÏ¾î³ª¸é, ¸µÅ©µå ¸®½ºÆ®¶ó´Â ÀÚ·á ±¸Á¶¸¦ »ç¿ëÇØ¼­, ¸µÅ©µå ¸®½ºÆ®·Î µ¥ÀÌÅÍ¸¦ Ãß°¡·Î µÚ¿¡ ¿¬°á½ÃÄÑ¼­ ÀúÀåÇÏ´Â ±â¹ý
+ Ã¼ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ :
+ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½ ï¿½Ç´ï¿½ Open Hashing ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½: ï¿½Ø½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
+ï¿½æµ¹ï¿½ï¿½ ï¿½Ï¾î³ªï¿½ï¿½, ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½, ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
  */
 public class HashTable_Chaining {
 	public Slot[] hashTable;
@@ -36,15 +36,15 @@ public class HashTable_Chaining {
 		Integer address = this.hashFunc(key);
 
 		if (this.hashTable[address] != null) {
-			Slot findSlot = this.hashTable[address];  //¸Ç¾Õ¿¡ ÀÖ´Â ½½·Ô °¡Áö°Ô µÊ
+			Slot findSlot = this.hashTable[address];  //ï¿½Ç¾Õ¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			Slot prevSlot = this.hashTable[address];
 
 			while (findSlot != null) {
 				if (findSlot.key == key) {
 					findSlot.value = value;
 					return true;
-				} else { //¼øÈ¸
-					prevSlot = findSlot; //Á¤º¸ ÀúÀå 
+				} else { //ï¿½ï¿½È¸
+					prevSlot = findSlot; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 					findSlot = findSlot.next;
 				}
 			}
@@ -54,7 +54,7 @@ public class HashTable_Chaining {
 			this.hashTable[address] = new Slot(key, value);
 		}
 		return true;
-	}
+	} 
 
 	public String getData(String key) {
 		Integer address = this.hashFunc(key);
@@ -65,11 +65,11 @@ public class HashTable_Chaining {
 				if(findSlot.key == key) {
 					return findSlot.value;
 				}else {
-					findSlot = findSlot.next; //Çìµå¿¡¼­ ¼øÈ¸ 
+					findSlot = findSlot.next; //ï¿½ï¿½å¿¡ï¿½ï¿½ ï¿½ï¿½È¸ 
 				}
 			}
 			return null;
-		}else {
+		}else { 
 			return null;
 		}
 	}
@@ -80,6 +80,7 @@ public class HashTable_Chaining {
 		mainObject.SaveData("David", "01044445555");
 		mainObject.SaveData("Dave", "01055556666");
 		System.out.println(mainObject.getData("DaveLee"));
+		
 	
 	}
 

@@ -17,7 +17,7 @@ public class MergeSort {
         while (leftList.size() > leftPoint && rightList.size() > rightPoint) { //포인터 사이즈가 증가해서 배열  초과할때 
             if (leftList.get(leftPoint) > rightList.get(rightPoint)) {
                 mergedList.add(rightList.get(rightPoint)); //작은게 앞에 가야하므로 ,(정렬)
-                rightPoint += 1;
+                rightPoint += 1; //작은쪽 포인터 증가
                 
             } else {
                 mergedList.add(leftList.get(leftPoint));
@@ -25,9 +25,11 @@ public class MergeSort {
             }
         }
 
+        // 위 while문은 양쪽 데이터가 있을때만 걸러주는 조건 이를 통과하면 한쪽은 남게되거나 끝남
+        
         // case2 - right 데이터가 없을 때 - 나머지 LeftList에 있는 데이터를 그대로 mergeList 뒤에 넣음
-        while (leftList.size() > leftPoint) { 
-            mergedList.add(leftList.get(leftPoint));
+        while (leftList.size() > leftPoint) { //반대방향 사이즈가 남아있으면, 반대방향이 안남은 거라서 반대로 해줘야함.
+            mergedList.add(leftList.get(leftPoint)); //남은 데이터 붙여줌
             leftPoint += 1;
         }
 
@@ -50,7 +52,7 @@ public class MergeSort {
 
         ArrayList<Integer> leftArr = new ArrayList<Integer>();
         ArrayList<Integer> rightArr = new ArrayList<Integer>();
-
+        	
         leftArr = this.mergeSplitFunc(new ArrayList<Integer>(dataList.subList(0, medium))); //sublist 함수 oneNote 참고 / 잘라주는 함수
         //0부터 medium-1 인덱스 번호까지 해당 배열 아이템을 서브 배열로 추출
         rightArr = this.mergeSplitFunc(new ArrayList<Integer>(dataList.subList(medium, dataList.size())));

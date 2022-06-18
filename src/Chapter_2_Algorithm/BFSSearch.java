@@ -4,6 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/*
+ 1. BFS 와 DFS 란?
+	• 대표적인 그래프 탐색 알고리즘
+		○ 너비 우선 탐색 (Breadth First Search): 정점들과 같은 레벨에 있는 노드들 (형제 노드들)을 먼저 탐색하는 방식
+		○ 깊이 우선 탐색 (Depth First Search): 정점의 자식들을 먼저 탐색하는 방식
+		
+	BFS/DFS 방식 이해를 위한 예제
+	• BFS 방식: A - B - C - D - G - H - I - E - F - J
+	한 단계씩 내려가면서, 해당 노드와 같은 레벨에 있는 노드들 (형제 노드들)을 먼저 순회함
+ */
 public class BFSSearch {
 														//노드들을 받을거라서 ArratList
     public ArrayList<String> bfsFunc(HashMap<String, ArrayList<String>> graph, String startNode) {

@@ -12,7 +12,7 @@ public class DFSSearch {
         needVisit.add(startNode);
 
         while (needVisit.size() > 0) {
-            String node = needVisit.remove(needVisit.size() - 1);    // BFS 와 이 부분만 다릅니다!
+            String node = needVisit.remove(needVisit.size() - 1);    // BFS 와 이 부분만 다릅니다! - 스택구현
             if (!visited.contains(node)) {
                 visited.add(node);
                 needVisit.addAll(graph.get(node));

@@ -84,7 +84,7 @@ public class improvedPrimPath {
 	                        pi.put(adjacent, poppedEdge.node);
 
 	                        // 우선순위 큐에 있는 데이터를 수정할 경우, 우선순위큐를 재조정해야 하므로, 간단히 삭제 후, 추가
-	                        keys.remove(linkedEdge);
+	                        keys.remove(linkedEdge); //바뀐거 최신 상태로 업데이트
 	                        keys.add(linkedEdge);
 	                    }
 	                }

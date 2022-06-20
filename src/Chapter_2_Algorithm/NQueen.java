@@ -49,7 +49,7 @@ public class NQueen {													//행 (y)
     public void dfsFunc(Integer N, Integer currentRow, ArrayList<Integer> currentCandidate) {
         if (currentRow == N) { //N => 맥스라인, (체스표 사이즈 4*4등 n*n)  currentRow가 N이면 더이상 체크할게 없음
             System.out.println(currentCandidate);
-            return;
+            return;	
         }
 
         for (int index = 0; index < N; index++) {

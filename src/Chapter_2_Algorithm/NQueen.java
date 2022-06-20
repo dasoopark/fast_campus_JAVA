@@ -34,7 +34,7 @@ public class NQueen {
         }
         return true;
     }
-
+    
     public void dfsFunc(Integer N, Integer currentRow, ArrayList<Integer> currentCandidate) {
         if (currentRow == N) {
             System.out.println(currentCandidate);

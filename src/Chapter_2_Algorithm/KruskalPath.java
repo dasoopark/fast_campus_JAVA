@@ -13,6 +13,14 @@ import java.util.HashMap;
 탐욕 알고리즘을 기초로 하고 있음 (당장 눈 앞의 최소 비용을 선택해서, 결과적으로 최적의 솔루션을 찾음)
 
 
+5. Union-Find 알고리즘
+	• Disjoint Set을 표현할 때 사용하는 알고리즘으로 트리 구조를 활용하는 알고리즘
+	• 간단하게, 노드들 중에 연결된 노드를 찾거나, 노드들을 서로 연결할 때 (합칠 때) 사용
+	• Disjoint Set이란
+		○ 서로 중복되지 않는 부분 집합들로 나눠진 원소들에 대한 정보를 저장하고 조작하는 자료구조
+		○ 공통 원소가 없는 (서로소) 상호 배타적인 부분 집합들로 나눠진 원소들에 대한 자료구조를 의미함
+		○ Disjoint Set = 서로소 집합 자료구조
+
  */
 class Kruskal_Edge implements Comparable<Kruskal_Edge> {
     public int weight;
@@ -40,7 +48,7 @@ class Kruskal_Edge implements Comparable<Kruskal_Edge> {
 public class KruskalPath {
 	
 	
-
+	//Union -Find 알고리즘
     HashMap<String, String> parent = new HashMap<String, String>();
     HashMap<String, Integer> rank = new HashMap<String, Integer>();
 
@@ -52,15 +60,15 @@ public class KruskalPath {
         return this.parent.get(node);
     }
 
-    public void union(String nodeV, String nodeU) {
+    public void union(String nodeV, String nodeU) { //사이클이 안생길때만 이 메소드를 호출
         String root1 = find(nodeV);
         String root2 = find(nodeU);
 
         // union-by-rank 기법
-        if (this.rank.get(root1) > this.rank.get(root2)) {
+        if (this.rank.get(root1) > this.rank.get(root2)) {	//rank =>onenote에 적혀있음 
             this.parent.put(root2, root1);
         } else {
-            this.parent.put(root1, root2);
+            this.parent.put(root1, root2); //root1 의 부모를 root2로 연결 
             if (this.rank.get(root1) == this.rank.get(root2)) {
                 this.rank.put(root2, this.rank.get(root2) + 1);
             }
@@ -87,8 +95,8 @@ public class KruskalPath {
 
         for (int index = 0; index < edges.size(); index++) {
             currentNode = edges.get(index);
-            if (find(currentNode.nodeV) != find(currentNode.nodeU)) {
-                union(currentNode.nodeV, currentNode.nodeU);
+            if (find(currentNode.nodeV) != find(currentNode.nodeU))  {//루트노드가 다르다면 싸이클이 없는거니
+                union(currentNode.nodeV, currentNode.nodeU); //합쳐라
                 mst.add(currentNode);
             }
         }

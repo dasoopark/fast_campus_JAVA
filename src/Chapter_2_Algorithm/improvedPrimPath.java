@@ -46,14 +46,16 @@ public class improvedPrimPath {
 
 	 public ArrayList<Path> improvedPrimFunc(HashMap<String, HashMap<String, Integer>> graph, String startNode) {
 	        ArrayList<Path> mst = new ArrayList<Path>();
-	        PriorityQueue<imp_Edge> keys = new PriorityQueue<imp_Edge>();
+	        PriorityQueue<imp_Edge> keys = new PriorityQueue<imp_Edge>(); 
+	        
+	        //해당 객체를 각 키마다 따로 저장 
 	        HashMap<String, imp_Edge> keysObjects = new HashMap<String, imp_Edge>();
 	        HashMap<String, String> pi = new HashMap<String, String>();
 	        Integer totalWeight = 0;
 	        HashMap<String, Integer> linkedEdges;
 	        imp_Edge edgeObject, poppedEdge, linkedEdge;
 
-	        for(String key : graph.keySet()) {
+	        for(String key : graph.keySet()) {	
 	            if (key == startNode) {
 	                edgeObject = new imp_Edge(key, 0);
 	                pi.put(key, key);
@@ -64,11 +66,11 @@ public class improvedPrimPath {
 	            keys.add(edgeObject);
 	            keysObjects.put(key, edgeObject);
 	        }
-
 	        while(keys.size() > 0) {
-	            poppedEdge = keys.poll();
+	            poppedEdge = keys.poll(); //키값 작은 애를 빼옴 - 스타트노드 부터 시작 
 	            keysObjects.remove(poppedEdge.node);
 
+	            					
 	            mst.add(new Path(pi.get(poppedEdge.node), poppedEdge.node, poppedEdge.weight));
 	            totalWeight += poppedEdge.weight;
 

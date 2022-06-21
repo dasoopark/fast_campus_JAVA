@@ -44,7 +44,7 @@ public class N_M_15652 {
             for (int i = 1; i <= M; i++) sb.append(selected[i]).append(' ');
             sb.append('\n');
         } else {
-            int start = selected[k-1];
+            int start = selected[k-1];	//차이점 
             if (start == 0) start = 1;
             for (int cand = start; cand <= N; cand++) {
                 // k 번째에 cand 가 올 수 있으면

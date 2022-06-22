@@ -47,20 +47,19 @@ public class Sequence_sum_1182 {
             // Not Include
             rec_func(k + 1, value);
         }
-    }
+    }    
 
     public static void main(String[] args) {
         input();
         // 1 번째 원소부터 M 번째 원소를 조건에 맞게 고르는 모든 방법을 탐색해줘
         rec_func(1, 0);
-        
+
         // ans 가 정말 "진 부분집합(비어있는 부분집합)"만 다루는 지 확인하기
         if (S == 0){//공집합 제거
             ans--;
         }
         System.out.println(ans);
     }
-
 
     static class FastReader {
         BufferedReader br;

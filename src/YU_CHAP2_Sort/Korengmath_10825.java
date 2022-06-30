@@ -66,10 +66,10 @@ public class Korengmath_10825 {
 
         @Override
         public int compareTo(Elem other) {
-            if (korean != other.korean) return other.korean - korean;
-            if (english != other.english) return english - other.english;
-            if (math != other.math) return other.math - math;
-            return name.compareTo(other.name);
+            if (korean != other.korean) return other.korean - korean; //내림차순 => 다른친구 - 자기자신
+            if (english != other.english) return english - other.english; //영어점수 오름차순
+            if (math != other.math) return other.math - math; //수학점수 내림차순
+            return name.compareTo(other.name); //★ 세 점수가 같다면 이름순으로 정렬해주면 됨 = 내이름과 other의 내임 비교
         }
     }
 

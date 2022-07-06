@@ -28,8 +28,8 @@ public class two_potion_2470 {
         // A[L...R] 에서 X 이상의 수 중 제일 왼쪽 인덱스를 return 하는 함수
         // 그런 게 없다면 R + 1 을 return 한다
 
-        int res = R + 1;  // 만약 A[L...R] 중
-        while (L <= R) {
+        int res = R + 1;  // 만약 A[L...R] 중 //아무것도 없을 때
+        while (L <= R) { 
             int mid = (L + R) / 2;
             if (A[mid] >= X) {
                 res = mid;

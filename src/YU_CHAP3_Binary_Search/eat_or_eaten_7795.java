@@ -68,7 +68,7 @@ public class eat_or_eaten_7795 {
 
         int res = L - 1;  // 만약 A[L...R] 중 X 이하의 수가 없다면 L - 1 을 return 한다.
         while (L <= R) {
-            int mid = (L + R) / 2;
+            int mid = (L + R) / 2; //가운데 위치
             if (A[mid] < X) {
                 res = mid;
                 L = mid + 1;

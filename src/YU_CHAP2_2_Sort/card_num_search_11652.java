@@ -56,11 +56,21 @@ public class card_num_search_11652 {
     }
 
     static void pro() {
+    	// Sort 정렬하기
+
+        // mode: 최빈값, modeCnt: 최빈값의 등장 횟수, curCnt: 현재 값(a[1])의 등장 횟수
+    	
+    	  // TODO
+        // 2번 원소부터 차례대로 보면서, 같은 숫자가 이어서 나오고 있는 지, 새로운 숫자가 나왔는 지를 판단하여
+        // curCnt를 갱신해주고, 최빈값을 갱신하는 작업.
+
+        // 정답 출력하기
+    	
         Arrays.sort(a, 1, N + 1);  // Sort
-        long mode = a[1];
+        long mode = a[1]; //시작 시 최빈값은 자신
         int modeCnt = 1, curCnt = 1;  // mode: 최빈값, modeCnt: 최빈값의 등장 횟수, curCnt: 현재 값(a[1])의 등장 횟수
 
-        for (int i = 2; i <= N; i++) {
+        for (int i = 2; i <= N; i++) { //1번째 다음 순서
             if (a[i] == a[i - 1]) {  // a[i] 라는 숫자가 계속 등장하고 있다.
                 curCnt++;
             } else {

@@ -60,6 +60,7 @@ public class draw_arrow_15970 {
             Collections.sort(a[color]);
         // TODO: 색깔 별로, 각 점마다 가장 가까운 점 찾아주기
         int ans = 0;
+       
         for (int color = 1; color <= N; color++) { //색깔 마다 순회 
             for (int i = 0; i < a[color].size(); i++) { //각 색깔의 점마다 순회
                 int left_distance = toLeft(color, i);
@@ -68,6 +69,7 @@ public class draw_arrow_15970 {
                 // 정답 출력하기
             }
         }
+      
         System.out.println(ans);
     }
 

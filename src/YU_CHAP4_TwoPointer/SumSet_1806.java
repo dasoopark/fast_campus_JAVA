@@ -55,18 +55,18 @@ public class SumSet_1806 {
             sum -= a[L - 1];
             
             // R 을 옮길 수 있을 때 까지 옮기기
-            while (R + 1 <= n && sum < S)
+            while (R + 1 <= n && sum < S)  //R의 끝자락이 아니거라, SUM이 제시한 S값을 초과하지 않았을때
                 sum += a[++R];
             
             // [L ... R] 의 합, 즉 sum이 조건을 만족하면 정답 갱신하기
             if (sum >= S)
-                ans = Math.min(ans, R - L + 1);
+                ans = Math.min(ans, R - L + 1); //왼쪽값 하나씩 옮겨가기
         }
 
         // ans 값을 보고 불가능 판단하기
-        if (ans == n + 1)
+        if (ans == n + 1) //MIN값이 한번도 갱신이 안됬다면 
             ans = 0;
-        System.out.println(ans);
+        System.out.println(ans); 
     }
 
     public static void main(String[] args) {

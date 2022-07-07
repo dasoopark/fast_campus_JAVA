@@ -91,7 +91,8 @@ public class draw_arrow_15970 {
             br = new BufferedReader(new FileReader(new File(s)));
         }
 
-        String next() {
+        String next() {  
+    
             while (st == null || !st.hasMoreElements()) {
                 try {
                     st = new StringTokenizer(br.readLine());
@@ -101,7 +102,6 @@ public class draw_arrow_15970 {
             }
             return st.nextToken();
         }
-
         int nextInt() {
             return Integer.parseInt(next());
         }

@@ -59,11 +59,11 @@ public class wife_install_2110 {
 
     static boolean determination(int D) {
         // D 만큼의 거리 차이를 둔다면 C개 만큼의 공유기를 설치할 수 있는가?
-
         // 제일 왼쪽 집부터 가능한 많이 설치해보자!
         // D 만큼의 거리를 두면서 최대로 설치한 개수와 C 를 비교하자.
-        int cnt = 1, last = A[1];
+        int cnt = 1, last = A[1]; //1번집에 우선 설치하므로 cnt 1부터 시작 
         for (int i = 2; i <= N; i++) {
+        	//이번에 A[i]에 설치가 가능한가?
             if (A[i] - last < D) continue;
             last = A[i];
             cnt++;

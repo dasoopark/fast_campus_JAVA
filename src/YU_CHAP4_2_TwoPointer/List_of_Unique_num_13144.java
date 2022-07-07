@@ -1,4 +1,4 @@
-package YU_CHAP4_TwoPointer;
+package YU_CHAP4_2_TwoPointer;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,15 +6,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class two_potion_towpointer_2470 {
+public class List_of_Unique_num_13144 {
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
 
     static int N;
-    static int[] A;
+    static int[] A, cnt;
 
     static void input() {
         N = scan.nextInt();
@@ -22,28 +21,28 @@ public class two_potion_towpointer_2470 {
         for (int i = 1; i <= N; i++) {
             A[i] = scan.nextInt();
         }
+        cnt = new int[100000 + 1];
     }
 
     static void pro() {
-        // 최소, 최대 원소를 빠르게 찾기 위해서 정렬을 미리 해주자.
-        Arrays.sort(A, 1, N + 1);
+        long ans = 0;
 
-        int best_sum = Integer.MAX_VALUE;
-        int v1 = 0, v2 = 0, L = 1, R = N;
-
-        while (L < R){  // L == R 인 상황이면 용액이 한 개 뿐인 것이므로, L < R 일 때까지만 반복한다.
-            if (best_sum > Math.abs(A[L] + A[R])) {
-                best_sum = Math.abs(A[L] + A[R]);
-                v1 = A[L];
-                v2 = A[R];
+        for (int L=1, R=0; L<=N; L++){  // L 마다 R 을 최대한 옮겨 줄 계획이다.
+            // R 을 옮길 수 있는 만큼 옮긴다.
+            while (R + 1 <= N && cnt[A[R+1]] == 0){
+                R++;
+                cnt[A[R]]++; //해당 배열 인덱스 값 증가
             }
-            if (A[L] + A[R] > 0) R--;
-            else L++;
+            
+            // 정답을 갱신한다
+            ans += R - L + 1;
+
+            // L 을 옮겨주면서 A[L] 의 개수를 감소시킨다.
+            cnt[A[L]]--;
         }
-        sb.append(v1).append(' ').append(v2);
-        System.out.println(sb);  
+
+        System.out.println(ans);
     }
-    
 
     public static void main(String[] args) {
         input();
@@ -69,15 +68,15 @@ public class two_potion_towpointer_2470 {
                     st = new StringTokenizer(br.readLine());
                 } catch (IOException e) {
                     e.printStackTrace();
-                } 
+                }
             }
             return st.nextToken();
         }
-        
+
         int nextInt() {
             return Integer.parseInt(next());
         }
-        
+
         long nextLong() {
             return Long.parseLong(next());
         }

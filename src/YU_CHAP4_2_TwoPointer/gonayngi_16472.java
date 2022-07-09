@@ -84,11 +84,10 @@ public class gonayngi_16472 {
         System.out.println(ans);
     }
 
-    public static void main(String[] args) {c
+    public static void main(String[] args) {
         input();
         pro();
     }
-
  
     static class FastReader {
         BufferedReader br;

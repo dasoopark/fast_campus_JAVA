@@ -83,7 +83,7 @@ public class gonayngi_16472 {
         }
         System.out.println(ans);
     }
-
+    
     public static void main(String[] args) {
         input();
         pro();
@@ -108,7 +108,7 @@ public class gonayngi_16472 {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
+            } 
             return st.nextToken();
         }
 

@@ -1,5 +1,14 @@
 package YU_CHAP4_2_TwoPointer;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
 /*
  문제
 N개의 수 중에서 어떤 수가 다른 수 두 개의 합으로 나타낼 수 있다면 그 수를 “좋다(GOOD)”고 한다.
@@ -42,11 +51,11 @@ public class Jota_1253 {
     static boolean func(int target_idx) {
         int L = 1, R = N;
         int target = A[target_idx];
-        while (L < R) {
-            if (L == target_idx) L++;
+        while (L < R) { 
+            if (L == target_idx) L++; //쓰면 안되는 숫자니까 바로 넘겨줘야 함 
             else if (R == target_idx) R--;
             else {
-                if (A[L] + A[R] > target) R--;
+                if (A[L] + A[R] > target) R--; //가장 큰게 오른쪽이니까. 
                 else if (A[L] + A[R] == target) return true;
                 else L++;
             }
@@ -57,7 +66,6 @@ public class Jota_1253 {
     static void pro() {
         // 최소, 최대를 빠르게 알기 위한 정렬
         Arrays.sort(A, 1, N + 1);
-
         int ans = 0;
         for (int i = 1; i <= N; i++) {
             // i 번째 원소가 서로 다른 두 수의 합으로 표현이 되는가?
@@ -65,7 +73,8 @@ public class Jota_1253 {
         }
         System.out.println(ans);
     }
-
+    
+     
     public static void main(String[] args) {
         input();
         pro();
@@ -79,7 +88,7 @@ public class Jota_1253 {
         public FastReader() {
             br = new BufferedReader(new InputStreamReader(System.in));
         }
-
+       
         public FastReader(String s) throws FileNotFoundException {
             br = new BufferedReader(new FileReader(new File(s)));
         }

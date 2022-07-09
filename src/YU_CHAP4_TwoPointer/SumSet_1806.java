@@ -64,7 +64,7 @@ public class SumSet_1806 {
         }
 
         // ans 값을 보고 불가능 판단하기
-        if (ans == n + 1) //MIN값이 한번도 갱신이 안됬다면 
+        if (ans == n + 1) //MIN값이 한번도 갱신이 안됬다면 (처음 ans = n+1 이니깐)
             ans = 0;
         System.out.println(ans); 
     }

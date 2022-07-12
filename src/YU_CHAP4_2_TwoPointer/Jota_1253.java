@@ -43,9 +43,9 @@ public class Jota_1253 {
         N = scan.nextInt();
         A = new int[N + 1];
         for (int i = 1; i <= N; i++) {
-            A[i] = scan.nextInt();
+            A[i] = scan.nextInt(); 
         }
-    }
+    }   
 
     // target_idx 번째 원소가 서로 다른 두 수의 합으로 표현이 되는가?
     static boolean func(int target_idx) {
@@ -79,7 +79,6 @@ public class Jota_1253 {
         input();
         pro();
     }
-
 
     static class FastReader {
         BufferedReader br;

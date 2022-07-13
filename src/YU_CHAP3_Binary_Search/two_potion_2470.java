@@ -18,7 +18,7 @@ public class two_potion_2470 {
 
     static void input() {
         N = scan.nextInt();
-        A = new int[N + 1];
+        A = new int[N + 1];,
         for (int i = 1; i <= N; i++) {
             A[i] = scan.nextInt();
         }
@@ -44,7 +44,6 @@ public class two_potion_2470 {
     static void pro() {
         // A 에 대해 이분 탐색을 할 예정이니까, 정렬을 미리 해주자.
         Arrays.sort(A, 1, N + 1);
-
         int best_sum = Integer.MAX_VALUE;
         int v1 = 0, v2 = 0;
         for (int left = 1; left <= N - 1; left++) {

@@ -54,7 +54,7 @@ public class gonayngi_16472 {
     }
 
     static void add(char x) {  // x 라는 알파벳 추가d
-        cnt[x - 'a']++; //아스키코드로 소문자 a를 빼야 해당 알파벳에 대한 값이 나옴 
+        cnt[x - 'a']++; //아스키코드로 소문자 a를 빼야 해4당 알파벳에 대한 값이 나옴 
         if (cnt[x - 'a'] == 1)  // 새롭게 나타난 알파벳이라는 뜻
             kind++; 
     }

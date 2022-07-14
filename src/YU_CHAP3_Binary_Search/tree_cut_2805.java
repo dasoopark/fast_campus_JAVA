@@ -64,7 +64,7 @@ public class tree_cut_2805 {
             A[i] = scan.nextInt();
         }
     }
-
+    
     static boolean determination(int H) {
         // H 높이로 나무들을 잘랐을 때, M 만큼을 얻을 수 있으면 true, 없으면 false를 return하는 함수
         long sum = 0;
@@ -89,7 +89,7 @@ public class tree_cut_2805 {
                 R = mid - 1;
             }
         }
-        System.out.println(ans);
+        System.out.println(ans); 
     }
 
     public static void main(String[] args) {
@@ -97,11 +97,11 @@ public class tree_cut_2805 {
         pro();
     }
 
-
+   
     static class FastReader {
         BufferedReader br;
         StringTokenizer st;
-
+        
         public FastReader() {
             br = new BufferedReader(new InputStreamReader(System.in));
         }

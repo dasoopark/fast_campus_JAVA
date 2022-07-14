@@ -18,7 +18,7 @@ public class two_potion_2470 {
 
     static void input() {
         N = scan.nextInt();
-        A = new int[N + 1];,
+        A = new int[N + 1];
         for (int i = 1; i <= N; i++) {
             A[i] = scan.nextInt();
         }
@@ -58,7 +58,7 @@ public class two_potion_2470 {
                 v1 = A[left];
                 v2 = A[candidate - 1];
             }
-
+            	
             // 2. A[left] + A[candidate]
             if (candidate <= N && Math.abs(A[left] + A[candidate]) < best_sum) {
                 best_sum = Math.abs(A[left] + A[candidate]);

@@ -119,9 +119,10 @@ public class wife_install_2110 {
             }
             return st.nextToken();
         }
-
+        
         int nextInt() {
             return Integer.parseInt(next());
+            
         }
 
         long nextLong() {

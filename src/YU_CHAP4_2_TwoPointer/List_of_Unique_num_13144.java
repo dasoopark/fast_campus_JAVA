@@ -31,7 +31,7 @@ public class List_of_Unique_num_13144 {
             // R 을 옮길 수 있는 만큼 옮긴다.
             while (R + 1 <= N && cnt[A[R+1]] == 0){
                 R++;
-                cnt[A[R]]++; //해당 배열 인덱스 값 증가
+                cnt[A[R]]++; //해당 배열 인덱스 값 증가 
             }
             
             // 정답을 갱신한다
@@ -48,7 +48,7 @@ public class List_of_Unique_num_13144 {
         input();
         pro();
     }
-
+ 
 
     static class FastReader {
         BufferedReader br;

@@ -78,7 +78,8 @@ public class gonayngi_16472 {
             }
 
             // 정답 갱신
-            ans = Math.max(ans, R - L + 1); 
+            ans = Math.max(ans, R - L + 1);
+
         }
         System.out.println(ans); 
     }
@@ -93,7 +94,8 @@ public class gonayngi_16472 {
         StringTokenizer st;
 
         public FastReader() {
-            br = new BufferedReader(new InputStreamReader(System.in));
+            br = new BufferedReader(new InputStreamReader(System.in));  
+            
         }
     
         public FastReader(String s) throws FileNotFoundException {

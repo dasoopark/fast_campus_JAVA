@@ -82,9 +82,9 @@ public class tree_cut_2805 {
         // 이분 탐색과 determination 문제를 이용해서 answer를 빠르게 구하자!
         while (L <= R) {
             int mid = (int) ((L + R) / 2);
-            if (determination(mid)) {
-                ans = mid;
-                L = mid + 1;
+            if (determination(mid)) { 
+                ans = mid;               
+                L = mid + 1; 
             } else {
                 R = mid - 1;
             }
@@ -97,7 +97,6 @@ public class tree_cut_2805 {
         pro();
     }
 
-   
     static class FastReader {
         BufferedReader br;
         StringTokenizer st;
@@ -105,9 +104,8 @@ public class tree_cut_2805 {
         public FastReader() {
             br = new BufferedReader(new InputStreamReader(System.in));
         }
-
         public FastReader(String s) throws FileNotFoundException {
-            br = new BufferedReader(new FileReader(new File(s)));
+            br = new BufferedReader(new FileReader(new File(s))); 
         }
 
         String next() {
@@ -122,7 +120,7 @@ public class tree_cut_2805 {
         }
 
         int nextInt() {
-            return Integer.parseInt(next());
+            return Integer.parseInt(next());   
         }
 
         long nextLong() {

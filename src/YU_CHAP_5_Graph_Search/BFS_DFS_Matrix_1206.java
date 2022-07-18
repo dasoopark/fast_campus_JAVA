@@ -74,7 +74,7 @@ public class BFS_DFS_Matrix_1206 {
         adj = new int[N + 1][N + 1];
         for (int i = 0; i < M; i++) {
             int x = scan.nextInt(), y = scan.nextInt();
-            adj[x][y] = adj[y][x] = 1;
+            adj[x][y] = adj[y][x] = 1; //양방향 간선이기 때문에 둘다 1 기록 
         }
     }
 

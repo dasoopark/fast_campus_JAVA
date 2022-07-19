@@ -81,7 +81,7 @@ public class BFS_DFS_List_1206 {
             adj[y].add(x);
         }
         for (int i = 1;i<=N;i++)
-            Collections.sort(adj[i]);
+            Collections.sort(adj[i]); //가장 낮은 정점부터 가기 위해 정렬해줌
     }
 
     // x 를 갈 수 있다는 걸 알고 방문한 상태

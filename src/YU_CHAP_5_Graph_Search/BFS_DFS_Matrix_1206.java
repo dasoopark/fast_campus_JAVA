@@ -67,7 +67,7 @@ public class BFS_DFS_Matrix_1206 {
     static int[][] adj;
     static boolean[] visit;
 
-    static void input() {
+    static void input() {	
         N = scan.nextInt();
         M = scan.nextInt();
         V = scan.nextInt();

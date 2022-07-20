@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
+import java.util.*;
 
 /*
 DFS와 BFS
@@ -67,17 +68,17 @@ public class BFS_DFS_Matrix_1206 {
     static int[][] adj;
     static boolean[] visit;
 
-    static void input() {	
+    static void input() {
         N = scan.nextInt();
         M = scan.nextInt();
         V = scan.nextInt();
         adj = new int[N + 1][N + 1];
         for (int i = 0; i < M; i++) {
             int x = scan.nextInt(), y = scan.nextInt();
-            adj[x][y] = adj[y][x] = 1; //양방향 간선이기 때문에 둘다 1 기록 
+            adj[x][y] = adj[y][x] = 1;
         }
     }
-
+    
     // x 를 갈 수 있다는 걸 알고 방문한 상태
     static void dfs(int x) {
         // x 를 방문했다.
@@ -104,15 +105,14 @@ public class BFS_DFS_Matrix_1206 {
         // start는 방문 가능한 점이므로 que에 넣어준다.
         que.add(start);
         visit[start] = true;  // start를 갈 수 있다고 표시하기 (중요!!!)
-
+       
         while (!que.isEmpty()) {  // 더 확인할 점이 없다면 정지
             int x = que.poll();
-
             sb.append(x).append(' ');
             for (int y = 1; y <= N; y++) {
                 if (adj[x][y] == 0) continue;
                 if (visit[y]) continue;  // x 에서 y 를 갈 수는 있지만, 이미 탐색한 점이면 무시
-                
+
                 // y를 갈 수 있으니까 que에 추가하고, visit 처리 하기!
                 que.add(y);
                 visit[y] = true;

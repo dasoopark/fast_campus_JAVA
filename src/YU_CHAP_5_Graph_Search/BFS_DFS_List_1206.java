@@ -111,8 +111,7 @@ public class BFS_DFS_List_1206 {
         visit[start] = true;  // start를 갈 수 있다고 표시하기 (중요!!!)
 
         while (!que.isEmpty()) {  // 더 확인할 점이 없다면 정지
-            int x = que.poll();
-
+            int x = que.poll();				
             sb.append(x).append(' ');
             for (int y: adj[x]){
                 if (visit[y]) continue;  // x 에서 y 를 갈 수는 있지만, 이미 탐색한 점이면 무시

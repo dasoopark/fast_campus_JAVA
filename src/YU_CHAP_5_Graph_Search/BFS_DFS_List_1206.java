@@ -116,7 +116,6 @@ public class BFS_DFS_List_1206 {
             sb.append(x).append(' ');
             for (int y: adj[x]){
                 if (visit[y]) continue;  // x 에서 y 를 갈 수는 있지만, 이미 탐색한 점이면 무시
-
                 // y를 갈 수 있으니까 que에 추가하고, visit 처리 하기!
                 que.add(y);
                 visit[y] = true;
@@ -150,7 +149,7 @@ public class BFS_DFS_List_1206 {
         public FastReader(String s) throws FileNotFoundException {
             br = new BufferedReader(new FileReader(new File(s)));
         }
-
+        
         String next() {
             while (st == null || !st.hasMoreElements()) {
                 try {

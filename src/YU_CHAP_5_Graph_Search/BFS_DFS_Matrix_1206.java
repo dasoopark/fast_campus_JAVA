@@ -92,7 +92,7 @@ public class BFS_DFS_Matrix_1206 {
             // y 를 이미 갈 수 있다는 사실을 안다면, 굳이 갈 필요 없다.
             if (visit[y])
                 continue;
-
+            
             // y에서 갈 수 있는 곳들도 확인 해보자
             dfs(y);
         }
@@ -101,7 +101,7 @@ public class BFS_DFS_Matrix_1206 {
     // start 에서 시작해서 갈 수 있는 정점들을 모두 탐색하기
     static void bfs(int start) {
         Queue<Integer> que = new LinkedList<>();
-
+        
         // start는 방문 가능한 점이므로 que에 넣어준다.
         que.add(start);
         visit[start] = true;  // start를 갈 수 있다고 표시하기 (중요!!!)

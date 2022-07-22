@@ -63,7 +63,7 @@ public class danji_number_2667 {
 
     // x, y 를 갈 수 있다는 걸 알고 방문한 상태
     static void dfs(int x, int y) {
-        group_cnt++;
+        group_cnt++;  
         visit[x][y] = true;
         for (int k = 0; k < 4; k++) {
             int nx = x + dir[k][0]; // k -> 배열 순회 하면서 x 값 

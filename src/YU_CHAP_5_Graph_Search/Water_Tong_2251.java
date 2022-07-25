@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 
 //물통의 현재 상태와 물을 붓는 행위를 관리하는 구조체
 class State{
- int[] X;
+ int[] X; //물통 상태 배열	
  State(int[] _X){
      X = new int[3];
      for (int i=0;i<3;i++) X[i] = _X[i];
@@ -21,7 +21,7 @@ class State{
  State move(int from,int to,int[] Limit){
      // from 물통에서 to 물통으로 물을 옮긴다.
      int[] nX = new int[]{X[0], X[1], X[2]};
-     if (X[from] + X[to] <= Limit[to]){  // 만약 from 을 전부 부을 수 있다면
+     if (X[from] + X[to] <= Limit[to]){  // 만약 from 을 전부 부을 수 있다면 
          nX[to] = nX[from] + nX[to];
          nX[from] = 0;
      }else{  // from 의 일부만 옮길 수 있는 경우

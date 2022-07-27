@@ -64,7 +64,7 @@ public class Labs_14502 {
         int cnt = 0;
         for (int i = 1; i <= N; i++) for (int j = 1; j <= M; j++) if (A[i][j] == 0 && !visit[i][j]) cnt++;
         ans = Math.max(ans, cnt);
-    }
+    }	
 
     // idx 번째 빈 칸에 벽을 세울 지 말 지 결정해야 하고, 이 전까지 selected_cnt 개의 벽을 세웠다.
     static void dfs(int idx, int selected_cnt) {

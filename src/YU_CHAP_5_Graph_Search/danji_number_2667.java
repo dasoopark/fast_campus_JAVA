@@ -84,7 +84,7 @@ public class danji_number_2667 {
                     group_cnt = 0;
                     dfs(i, j);
                     group.add(group_cnt);
-                }
+                }  
             }
         }
 

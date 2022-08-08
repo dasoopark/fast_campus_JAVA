@@ -55,8 +55,9 @@ public class danji_number_2667 {
 
     static void input() {
         N = scan.nextInt();
-        a = new String[N];
-        for (int i = 0; i < N; i++)
+        a = new String[N]; 
+        
+        for (int i = 0; i < N; i++) 
             a[i] = scan.nextLine();
         visit = new boolean[N][N];
     }
@@ -64,14 +65,14 @@ public class danji_number_2667 {
     // x, y 를 갈 수 있다는 걸 알고 방문한 상태
     static void dfs(int x, int y) {
         group_cnt++;  
-        visit[x][y] = true;
+        visit[x][y] = true; 
         for (int k = 0; k < 4; k++) {
             int nx = x + dir[k][0]; // k -> 배열 순회 하면서 x 값 
             int ny = y + dir[k][1];
             if (nx < 0 || ny < 0 || nx >= N || ny >= N) continue;  // 지도를 벗어나는 곳으로 가는가?
             if (a[nx].charAt(ny) == '0') continue;  // 갈 수 있는 칸인지 확인해야 한다.
             if (visit[nx][ny]) continue;  // 이미 방문한 적이 있는 곳인가?
-            dfs(nx, ny);
+            dfs(nx, ny); 
         }
     }
 
@@ -80,18 +81,18 @@ public class danji_number_2667 {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 if (!visit[i][j] && a[i].charAt(j) == '1') {
-                    // 갈 수 있는 칸인데, 이미 방문처리 된, 즉 새롭게 만난 단지인 경우!
-                    group_cnt = 0;
+                    // 갈 수 있는 칸인데, 이미 방문처리
                     dfs(i, j);
                     group.add(group_cnt);
                 }  
-            }
+            }	
         }
 
         Collections.sort(group);
         sb.append(group.size()).append('\n');
         for (int cnt: group) sb.append(cnt).append('\n');
         System.out.println(sb.toString());
+        
     }
 
     public static void main(String[] args) {
@@ -128,7 +129,7 @@ public class danji_number_2667 {
         }
 
         long nextLong() {
-            return Long.parseLong(next());
+            return Long.parseLong(next()); 
         }
 
         double nextDouble() {

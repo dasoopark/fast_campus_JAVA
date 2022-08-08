@@ -87,8 +87,8 @@ public class BFS_DFS_Matrix_1206 {
 
         // x 에서 갈 수 있는 곳들을 작은 번호부터 모두 방문한다.
         for (int y = 1; y <= N; y++) {
-            if (adj[x][y] == 0) continue;
-
+            if (adj[x][y] == 0) continue;  
+            
             // y 를 이미 갈 수 있다는 사실을 안다면, 굳이 갈 필요 없다.
             if (visit[y])
                 continue;
@@ -108,6 +108,7 @@ public class BFS_DFS_Matrix_1206 {
        
         while (!que.isEmpty()) {  // 더 확인할 점이 없다면 정지
             int x = que.poll();
+            
             sb.append(x).append(' ');
             for (int y = 1; y <= N; y++) {
                 if (adj[x][y] == 0) continue;
@@ -138,7 +139,6 @@ public class BFS_DFS_Matrix_1206 {
     static class FastReader {
         BufferedReader br;
         StringTokenizer st;
-
         public FastReader() {
             br = new BufferedReader(new InputStreamReader(System.in));
         }

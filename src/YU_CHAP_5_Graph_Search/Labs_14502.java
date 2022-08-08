@@ -22,18 +22,17 @@ public class Labs_14502 {
     static void input() {
         N = scan.nextInt();
         M = scan.nextInt(); 
-        A = new int[N + 1][M + 1];
+        A = new int[N + 1][M + 1];   
         blank = new int[N * M + 1][2];
         visit = new boolean[N + 1][M + 1];
         for (int i = 1; i <= N; i++)
-            for (int j = 1; j <= M; j++)
+            for (int j = 1; j <= M; j++)  
                 A[i][j] = scan.nextInt();
     }
 
     // 바이러스 퍼뜨리기!! 
     static void bfs() {
         Queue<Integer> Q = new LinkedList<>();
-
         // 모든 바이러스가 시작점으로 가능하니까, 전부 큐에 넣어준다.
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= M; j++) {
@@ -44,7 +43,7 @@ public class Labs_14502 {
                     visit[i][j] = true;
                 }
             }
-        }
+        }	
 
         // BFS 과정
         while (!Q.isEmpty()) {
@@ -130,7 +129,7 @@ public class Labs_14502 {
         int nextInt() {
             return Integer.parseInt(next());
         }
-
+        	
         long nextLong() {
             return Long.parseLong(next());
         }

@@ -50,7 +50,7 @@ public class Labs_14502 {
             int x = Q.poll(), y = Q.poll();
             for (int k = 0; k < 4; k++) {
                 int nx = x + dir[k][0], ny = y + dir[k][1];
-                if (nx < 1 || ny < 1 || nx > N || ny > M) continue;
+                if (nx < 1 || ny < 1 || nx > N || ny > M) continue;  
                 if (A[nx][ny] != 0) continue;
                 if (visit[nx][ny]) continue;
                 visit[nx][ny] = true;

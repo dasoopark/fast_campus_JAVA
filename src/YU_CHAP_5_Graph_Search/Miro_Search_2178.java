@@ -35,13 +35,13 @@ public class Miro_Search_2178 {
     // x, y 를 갈 수 있다는 걸 알고 방문한 상태
     static void bfs(int x, int y) {
         // dist 배열 초기화
-        for (int i = 0; i < N; i++) for (int j = 0; j < M; j++) dist[i][j] = -1;
+        for (int i = 0; i < N; i++) for (int j = 0; j < M; j++) dist[i][j] = -1; //-1로 초기화
 
         // (x, y)를 Q에 넣어주고, visit 표시와 dist 값 초기화
         Queue<Integer> Q = new LinkedList<>();
-        Q.add(x);
-        Q.add(y);
-        dist[x][y] = 1;
+        Q.add(x); //행
+        Q.add(y); //열
+        dist[x][y] = 1; //시작부터 한칸 밟으니깐 0이 아닌 1로 표현
         visit[x][y] = true;
 
         // BFS 과정 시작
@@ -57,7 +57,7 @@ public class Miro_Search_2178 {
                 Q.add(nx);
                 Q.add(ny);
                 visit[nx][ny] = true;
-                dist[nx][ny] = dist[x][y] + 1;
+                dist[nx][ny] = dist[x][y] + 1; //하나 더 밟았으니깐 1 더해줌
             }
         }
     }

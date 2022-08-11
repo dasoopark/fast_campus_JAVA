@@ -43,7 +43,7 @@ public class Find_parentNode_11725 {
 
     static void pro() {
         // 1 번 정점이 ROOT 이므로, 여기서 시작해서 Tree의 구조를 파악하자.
-        dfs(1, -1);
+        dfs(1, -1); //시작노드 1 , 시작노드의 부모는 없으므로 -1을 넣어서 없다고 표현 
 
         // 정답 출력하기
         for (int i = 2; i <= n; i++) {

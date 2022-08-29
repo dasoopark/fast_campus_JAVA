@@ -15,44 +15,52 @@ public class Tree_1068 {
 
     static int n, root, erased;
     static ArrayList<Integer>[] child;
-    static int[] leaf;
+    static int[] leaf;   
 
-    static void input() {
+    static void input() {  
         n = scan.nextInt();
         child = new ArrayList[n];
         leaf = new int[n];
+
+        
         for (int i = 0; i < n; i++) child[i] = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             int par = scan.nextInt();
-            if (par == -1){
-                root = i;
+            if (par == -1){ 
+                root = i; 
                 continue;
             }
-            child[par].add(i);
+           
+            child[par].add(i);   
+            
         }
-        erased = scan.nextInt();
+        erased = scan.nextInt();  
+           
+
     }
 
     // dfs(x, par) := 정점 x 의 부모가 par 였고, Subtree(x) 의 leaf 개수를 세주는 함수
-    static void dfs(int x, int par) {
+    static void dfs(int x, int par) { 
         if (child[x].isEmpty())
-            leaf[x]++;
+            leaf[x]++;  
         for (int y : child[x]) {
+        	
             if (y == par) continue;
-            dfs(y, x);
+            dfs(y, x);  
 
-            leaf[x] += leaf[y];
+
+            leaf[x] += leaf[y];  
         }
     }
 
     static void pro() {
-        // erased와 그의 부모 사이의 연결을 끊어주기
+        // erased와 그의 부모 사이의 연결을 끊어주기	
         for (int i=0;i<n;i++){
             if (child[i].contains(erased)){
                 child[i].remove(child[i].indexOf(erased));
             }
         }
-        
+          
         // erased 가 root 인 예외 처리하기
         if (root != erased) dfs(root, -1);
         
@@ -60,7 +68,7 @@ public class Tree_1068 {
         System.out.println(leaf[root]);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         input();
         pro();
     }

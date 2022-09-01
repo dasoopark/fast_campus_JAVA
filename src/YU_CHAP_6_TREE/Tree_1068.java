@@ -22,7 +22,7 @@ public class Tree_1068 {
         child = new ArrayList[n];
         leaf = new int[n];
 
-        
+           
         for (int i = 0; i < n; i++) child[i] = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             int par = scan.nextInt();

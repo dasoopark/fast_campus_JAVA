@@ -1,4 +1,4 @@
-package YU_CHAP_6_TREE;
+package YU_CHAP_7_WISANG_SORT;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,70 +7,66 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class Tree_1068 {
+public class Acm_Craft_1005 {
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
 
-    static int n, root, erased;
-    static ArrayList<Integer>[] child;
-    static int[] leaf;   
+    static int N, M;
+    static int[] indeg, T_done, T;
+    static ArrayList<Integer>[] adj;
 
-    static void input() {  
-        n = scan.nextInt();
-        child = new ArrayList[n];
-        leaf = new int[n];
-
-           
-        for (int i = 0; i < n; i++) child[i] = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            int par = scan.nextInt();
-            if (par == -1){ 
-                root = i; 
-                continue;
-            }
-           
-            child[par].add(i);   
-            
-        } 
-        erased = scan.nextInt();  
-           
-
-    }
-
-    // dfs(x, par) := 정점 x 의 부모가 par 였고, Subtree(x) 의 leaf 개수를 세주는 함수
-    static void dfs(int x, int par) { 
-        if (child[x].isEmpty())
-            leaf[x]++;  
-        for (int y : child[x]) {
-        	
-            if (y == par) continue;
-            dfs(y, x);  
-
-
-            leaf[x] += leaf[y];  
+    static void input() {
+        N = scan.nextInt();
+        M = scan.nextInt();
+        adj = new ArrayList[N + 1];
+        indeg = new int[N + 1];
+        T = new int[N + 1];
+        T_done = new int[N + 1];
+        for (int i = 1; i <= N; i++) {
+            adj[i] = new ArrayList<>();
+            T[i] = scan.nextInt();
+        }
+        for (int i = 0; i < M; i++) {
+            int x = scan.nextInt(), y = scan.nextInt();
+            adj[x].add(y);
+            // indegree 계산하기
+            indeg[y]++;
         }
     }
 
     static void pro() {
-        // erased와 그의 부모 사이의 연결을 끊어주기	
-        for (int i=0;i<n;i++){
-            if (child[i].contains(erased)){
-                child[i].remove(child[i].indexOf(erased));
+        Deque<Integer> queue = new LinkedList<>();
+        // 제일 앞에 "정렬될 수 있는" 정점 찾기
+        for (int i = 1; i <= N; i++)
+            if (indeg[i] == 0) {
+                queue.add(i);
+                T_done[i] = T[i];
+            }
+
+        // 위상 정렬 순서대로 T_done 계산을 함께 해주기
+        while (!queue.isEmpty()) {
+            int x = queue.poll();
+            for (int y : adj[x]) {
+                indeg[y]--;
+                if (indeg[y] == 0) queue.add(y);
+                T_done[y] = Math.max(T_done[y], T_done[x] + T[y]);
             }
         }
-          
-        // erased 가 root 인 예외 처리하기
-        if (root != erased) dfs(root, -1);
-        
-        // 정답 출력하기
-        System.out.println(leaf[root]);
+        int W = scan.nextInt();
+        System.out.println(T_done[W]);
     }
 
-    public static void main(String[] args)  {
-        input();
-        pro();
+    public static void main(String[] args) {
+        int Q = scan.nextInt();
+        while (Q > 0) {
+            Q--;
+            input();
+            pro();
+        }
     }
 
 

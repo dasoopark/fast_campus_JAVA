@@ -30,7 +30,7 @@ public class lineUp_2252 {
             int x = scan.nextInt(), y = scan.nextInt();
             adj[x].add(y);
             // indegree 계산하기
-            indeg[y]++; //인접 개수 증가
+            indeg[y]++; //인접 개수 증가   
         }
     }
 

@@ -56,7 +56,7 @@ public class Acm_Craft_1005 {
                 T_done[y] = Math.max(T_done[y], T_done[x] + T[y]);
             }
         }
-        int W = scan.nextInt();
+        int W = scan.nextInt(); 
         System.out.println(T_done[W]);
     }
 

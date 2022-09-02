@@ -55,6 +55,7 @@ public class lineUp_2252 {
             }
         }
         System.out.println(sb);
+        
     }
 
     public static void main(String[] args) {

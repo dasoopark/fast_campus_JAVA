@@ -21,7 +21,8 @@ public class lineUp_2252 {
 
     static void input() {
         N = scan.nextInt();
-        M = scan.nextInt();
+        M = scan.nextInt(); 
+
         adj = new ArrayList[N + 1];
         indeg = new int[N + 1];
         for (int i = 1; i <= N; i++)

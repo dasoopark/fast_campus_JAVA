@@ -22,14 +22,15 @@ public class lineUp_2252 {
     static void input() {
         N = scan.nextInt();
         M = scan.nextInt(); 
-
-        adj = new ArrayList[N + 1];
+        
+        adj = new ArrayList[N + 1];  
         indeg = new int[N + 1];
         for (int i = 1; i <= N; i++)
             adj[i] = new ArrayList<>();
         for (int i = 0; i < M; i++) {
             int x = scan.nextInt(), y = scan.nextInt();
-            adj[x].add(y);
+            adj[x].add(y);  	
+            
             // indegree 계산하기
             indeg[y]++; //인접 개수 증가   
         }
@@ -55,7 +56,7 @@ public class lineUp_2252 {
                 if (indeg[y] == 0) queue.add(y);
             }
         }
-        System.out.println(sb);
+        System.out.println(sb); 
         
     }
 

@@ -24,10 +24,10 @@ public class lineUp_2252 {
         M = scan.nextInt(); 
         
         adj = new ArrayList[N + 1];  
-        indeg = new int[N + 1];
+        indeg = new int[N + 1];  
         for (int i = 1; i <= N; i++)
             adj[i] = new ArrayList<>();
-        for (int i = 0; i < M; i++) {
+        for (int i = 0; i < M; i++) {  
             int x = scan.nextInt(), y = scan.nextInt();
             adj[x].add(y);  	
             

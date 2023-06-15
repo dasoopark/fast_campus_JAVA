@@ -17,7 +17,7 @@ public class minimum_path_1916 {
 
     static class Edge {
         public int to, weight;
-
+        
         public Edge(int _to, int _weight) {
             this.to = _to;
             this.weight = _weight;
@@ -40,16 +40,16 @@ public class minimum_path_1916 {
     static int[] dist;
     static ArrayList<Edge>[] edges;
 
-    static void input() {
-        N = scan.nextInt();
-        M = scan.nextInt();
+    static void input() {  
+        N = scan.nextInt();  
+        M = scan.nextInt(); 
         dist = new int[N + 1];
-        edges = new ArrayList[N + 1];
+        edges = new ArrayList[N + 1];    
         for (int i = 1; i <= N; i++) edges[i] = new ArrayList<Edge>();
         for (int i = 1; i <= M; i++) {
             int from = scan.nextInt();
             int to = scan.nextInt();
-            int weight = scan.nextInt();
+            int weight = scan.nextInt();  
             edges[from].add(new Edge(to, weight));
         }
         start = scan.nextInt();
@@ -67,13 +67,13 @@ public class minimum_path_1916 {
         // 다른 방법) PriorityQueue<Info> pq = new PriorityQueue<>((o1, o2) -> o1.dist - o2.dist);
 
         // 시작점에 대한 정보(Information)을 기록에 추가하고, 거리 배열(dist)에 갱신해준다.
-        pq.add(new Info(start, 0));
+        pq.add(new Info(start, 0)); 
         dist[start] = 0;
 
         // 거리 정보들이 모두 소진될 때까지 거리 갱신을 반복한다.
         while (!pq.isEmpty()) {
-            Info info = pq.poll();
-            
+            Info info = pq.poll();  
+
             // 꺼낸 정보가 최신 정보랑 다르면, 의미없이 낡은 정보이므로 폐기한다.
             if (dist[info.idx] != info.dist) continue;
 
@@ -102,7 +102,7 @@ public class minimum_path_1916 {
     static class FastReader {
         BufferedReader br;
         StringTokenizer st;
-
+        
         public FastReader() {
             br = new BufferedReader(new InputStreamReader(System.in));
         }

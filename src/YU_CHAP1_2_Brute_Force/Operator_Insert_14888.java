@@ -54,7 +54,7 @@ public class Operator_Insert_14888 {
         // value, order[i], num[i+1]
         if (operator == 1) // +
             return operand1 + operand2;
-        else if (operator == 2) // -
+        else if (operator == 2) // -	
             return operand1 - operand2;
         else if (operator == 3) // *
             return operand1 * operand2;
@@ -63,7 +63,7 @@ public class Operator_Insert_14888 {
     }
 
 
-    // order[1...N-1] 에 연산자들이 순서대로 저장될 것이다.
+    // order[1...N-1] 에 연산자들이 순서대로 저장될 것이다.\		
     static void rec_func(int k, int value) {
         if (k == N) {
             // 완성된 식에 맞게 계산을 해서 정답에 갱신하는 작업

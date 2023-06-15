@@ -22,9 +22,9 @@ public class Find_parentNode_11725 {
         adj = new ArrayList[n + 1];
         parent = new int[n + 1];
         for (int i = 1; i <= n; i++) adj[i] = new ArrayList<>();
-
+        	
         // 인접 리스트 구성하기
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n; i++) {	
             int x = scan.nextInt(), y = scan.nextInt();
             adj[x].add(y);
             adj[y].add(x);
